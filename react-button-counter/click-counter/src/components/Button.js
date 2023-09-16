@@ -1,10 +1,20 @@
-import React from 'react';
-import App from '../App';
+import React, { useState } from 'react';
 
-const Button = (props) => {
+const Button = ()   => {
+  const [counter, setCounter] = useState(0);
+
+  const buttonClickHandler = () => {
+    setCounter(counter + 1)
+    console.log(counter)
+  }
   return (
-   <button>{ }</button>
-  )
+    <div className="App">
+      <div className="counter">
+        {counter}
+      </div>
+      <button onClick={buttonClickHandler}>CLICK ME!</button>
+    </div>
+  );
 };
 
 
